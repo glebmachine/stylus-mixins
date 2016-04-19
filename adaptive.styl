@@ -1,0 +1,37 @@
+width-between($min, $max)
+  $max = $max - 1
+  $min = $min - 1
+
+  @media only screen and (min-width : $min * 1px) and (max-width : $max * 1px)
+    {block}
+
+height-between($min, $max)
+  $max = $max - 1
+  $min = $min - 1
+
+  @media only screen and (min-height : $min * 1px) and (max-height : $max * 1px)
+    {block}
+
+width-lessthan($v)
+  $v = $v - 1
+
+  @media only screen and (max-width : $v * 1px)
+    {block}
+
+height-lessthan($v)
+  $v = $v - 1
+
+  @media only screen and (max-height : $v * 1px)
+    {block}
+
+width-morethan($v)
+  $v = $v
+
+  @media only screen and (min-width : $v * 1px)
+    {block}
+
+height-morethan($v)
+  $v = $v - 1
+
+  @media only screen and (min-height : $v * 1px)
+    {block}

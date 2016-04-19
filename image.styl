@@ -1,0 +1,39 @@
+image-width($image)
+  $width = image-size($image)[0]
+  return $width
+
+image-height($image)
+  $height = image-size($image)[1]
+  return $height
+
+imgbox($image)
+  background-position center
+  background-repeat no-repeat
+  width image-size($image)[0]
+  height image-size($image)[1]
+  background-image-retina $image
+
+background-image-retina($image)
+
+  $ext = extname($image)
+  $dirname = dirname($image)
+  $filename = basename($image, $ext)
+  $image2x = pathjoin($dirname, $filename + '@2x' + $ext)
+  $image3x = pathjoin($dirname, $filename + '@3x' + $ext)
+
+  background-image url($image)
+  background-size image-size($image)[0] auto
+
+  if file-exists($image2x)
+    +retina(1.5)
+      background-image url($image2x)
+
+  if file-exists($image3x)
+    +retina(2.5)
+      background-image url($image3x)
+
+
+retina($ratio)
+  @media (-webkit-min-device-pixel-ratio: $ratio), (min-resolution: 96dpi * $ratio)
+    {block}
+

@@ -1,0 +1,26 @@
+
+pixelperfect($image)
+  body
+    &::after
+      position absolute
+      content ' '
+      top 0
+      left 0
+      width 100%
+      z-index: 99999999
+      background center top no-repeat
+      height image-size($image)[1]
+      background-image-retina $image
+      opacity 0.5
+      pointer-events none
+
+pixelperfectblock($image)
+  &::before
+    position absolute
+    content ' '
+    z-index: 99999999
+    background center top no-repeat
+    height image-size($image)[1]
+    imgbox $image
+    opacity 0.5
+    pointer-events none
