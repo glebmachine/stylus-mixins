@@ -1,36 +1,7 @@
 use('functions/file-exists.js')
 
-
 @import 'image.styl'
 @import 'dev.styl'
 @import 'adaptive.styl'
 @import 'rem-extends.styl'
-
-placeholder()
-  &::-webkit-input-placeholder
-    {block}
-
-  &:-moz-placeholder
-    {block}
-
-  &::-moz-placeholder
-    {block}
-
-  &:-ms-input-placeholder
-    {block}
-
-fixrender()
-  -webkit-backface-visibility hidden
-  -webkit-perspective 1000
-
-
-selection($color, $background)
-  &::selection
-    color: $color
-    background: $background
-
-clearfix()
-  &:after
-    content ""
-    display table
-    clear both
+@import 'common.styl'
