@@ -6,6 +6,21 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+
+  "files": [
+    "functions/",
+    "adaptive.styl",
+    "common.styl",
+    "dev.styl",
+    "image.styl",
+    "index.styl",
+    "mixins.styl",
+    "rem-extends.styl",
+    "README.md",
+    "LICENSE/",
+    "package.json",
+  ],
+
   "repository": {
     "type": "git",
     "url": "http://github.com/glebmachine/stylus-mixins"
