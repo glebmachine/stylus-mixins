@@ -35,3 +35,16 @@ height-morethan($v)
 
   @media only screen and (min-height : $v * 1px)
     {block}
+
+width-between-fontsize($w1, $f1, $w2, $f2, $before = false, $after = false)
+
+  if $before
+    +width-lessthan($w1)
+      font-size $f1 * 1px
+
+  if $after
+    +width-morethan($w2)
+      font-size $f2 * 1px
+
+  +width-between($w1, $w2)
+    font-size "calc(%s * 1px + (%s - %s) * (100vw - %s * 1px) / (%s - %s) )" % ($f1 $f2 $f1 $w1 $w2 $w1)
