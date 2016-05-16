@@ -47,4 +47,7 @@ width-between-fontsize($w1, $f1, $w2, $f2, $before = false, $after = false)
       font-size $f2 * 1px
 
   +width-between($w1, $w2)
-    font-size "calc(%s * 1px + (%s - %s) * (100vw - %s * 1px) / (%s - %s) )" % ($f1 $f2 $f1 $w1 $w2 $w1)
+    font-size calc-between($w1, $f1, $w2, $f2)
+
+calc-between($w1, $f1, $w2, $f2)
+  return "calc(%s * 1px + (%s - %s) * (100vw - %s * 1px) / (%s - %s) )" % ($f1 $f2 $f1 $w1 $w2 $w1)
