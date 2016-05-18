@@ -1,26 +1,18 @@
 
-pixelperfect($image)
-  body
-    &::after
-      position absolute
-      content ' '
-      top 0
-      left 0
-      width 100%
-      z-index: 99999999
-      background center top no-repeat
-      height image-size($image)[1]
-      background-image-retina $image
-      opacity 0.5
-      pointer-events none
+pixelperfect($image, $fixsize)
+  position relative
 
-pixelperfectblock($image)
   &::before
+    content ''
     position absolute
-    content ' '
-    z-index: 99999999
-    background center top no-repeat
-    height image-size($image)[1]
+    left 50%
+    top 0
+    margin-left image-size($image)[0] * -0.5
     imgbox $image
+    z-index: 99999999
     opacity 0.5
     pointer-events none
+
+  if ($fixsize)
+    width image-size($image)[0]
+    height image-size($image)[1]
