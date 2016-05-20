@@ -8,9 +8,9 @@ vh($v)
 strip-units($v)
   return 1 * $v
 
-imgboxrem($image)
-  width : rem(strip-units(image-size($image)[0]))
-  height : rem(strip-units(image-size($image)[1]))
+imgboxrem($image, $baseFontSize = 16)
+  width : rem(strip-units(image-size($image)[0]), $baseFontSize)
+  height : rem(strip-units(image-size($image)[1]), $baseFontSize)
   background-position : center
   background-repeat : no-repeat
   background-image-retina($image)
