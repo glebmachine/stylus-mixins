@@ -1,39 +1,40 @@
 {
-    "name": "stylus-mixins",
-    "version": "1.0.10",
-    "description": "Stylus mixins for happy development",
-    "main": "index.styl",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "files": [
-        "functions/",
-        "adaptive.styl",
-        "common.styl",
-        "dev.styl",
-        "image.styl",
-        "index.styl",
-        "mixins.styl",
-        "rem-extends.styl",
-        "README.md",
-        "LICENSE/",
-        "package.json"
-    ],
-    "repository": {
-        "type": "git",
-        "url": "http://github.com/glebmachine/stylus-mixins"
-    },
-    "keywords": [
-        "stylus",
-        "mixins",
-        "adaptive",
-        "image",
-        "responsive",
-        "rem"
-    ],
-    "author": "Gleb Mikheev <mikheev@betaagency.ru> (http://betaagency.ru)",
-    "license": "MIT",
-    "dependencies": {
-        "stylus": "0.54.2"
-    }
+  "name": "stylus-mixins",
+  "version": "1.0.10",
+  "description": "Stylus mixins for happy development",
+  "main": "index.styl",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "files": [
+    "functions/",
+    "adaptive.styl",
+    "common.styl",
+    "dev.styl",
+    "image.styl",
+    "index.styl",
+    "mixins.styl",
+    "rem-extends.styl",
+    "README.md",
+    "LICENSE/",
+    "package.json"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "http://github.com/glebmachine/stylus-mixins"
+  },
+  "keywords": [
+    "stylus",
+    "mixins",
+    "adaptive",
+    "image",
+    "responsive",
+    "rem"
+  ],
+  "author": "Gleb Mikheev <mikheev@betaagency.ru> (http://betaagency.ru)",
+  "license": "MIT",
+  "dependencies": {
+    "stylus": "0.54.2"
+  },
+  "versionify": "1.0.10"
 }
