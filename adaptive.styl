@@ -36,24 +36,45 @@ height-morethan($v)
   @media only screen and (min-height : $v * 1px)
     {block}
 
-width-between-fontsize($w1, $f1, $w2, $f2, $before = false, $after = false)
+calc-between-width($w1, $v1, $w2, $v2)
+  return "calc(%s * 1px + (%s - %s) * (100vw - %s * 1px) / (%s - %s) )" % ($v1 $v2 $v1 $w1 $w2 $w1)
+
+calc-between-height($h1, $v1, $h2, $v2)
+  return "calc(%s * 1px + (%s - %s) * (100vh - %s * 1px) / (%s - %s) )" % ($v1 $v2 $v1 $h1 $h2 $h1)
+
+width-between-property($property, $w1, $v1, $w2, $v2, $before = false, $after = false)
+  {$property} $v1 * 1px
+
+  +width-between($w1, $w2)
+    {$property} calc-between-width($w1, $v1, $w2, $v2)
 
   if $before
     +width-lessthan($w1)
-      font-size $f1 * 1px
+      {$property} $v1 * 1px
 
   if $after
     +width-morethan($w2)
-      font-size $f2 * 1px
+      {$property} $v2 * 1px
 
-  +width-between($w1, $w2)
-    font-size calc-between($w1, $f1, $w2, $f2)
 
-calc-between-width($w1, $f1, $w2, $f2)
-  return "calc(%s * 1px + (%s - %s) * (100vw - %s * 1px) / (%s - %s) )" % ($f1 $f2 $f1 $w1 $w2 $w1)
+height-between-property($property, $h1, $v1, $h2, $v2, $before = false, $after = false)
+  {$property} $v1 * 1px
 
-calc-between-height($h1, $f1, $h2, $f2)
-  return "calc(%s * 1px + (%s - %s) * (100vh - %s * 1px) / (%s - %s) )" % ($f1 $f2 $f1 $h1 $h2 $w1)
+  +height-between($h1, $h2)
+    {$property} calc-between-height($h1, $v1, $h2, $v2)
 
-calc-between($w1, $f1, $w2, $f2)
-  return calc-between-height($w1, $f1, $w2, $f2)
+  if $before
+    +height-lessthan($h1)
+      {$property} $v1 * 1px
+
+  if $after
+    +height-morethan($h2)
+      {$property} $v2 * 1px
+
+
+// shortcuts
+calc-between($w1, $v1, $w2, $v2)
+  return calc-between-height($w1, $v1, $w2, $v2)
+
+width-between-fontsize($w1, $v1, $w2, $v2, $before = false, $after = false)
+  width-between-property 'font-size', $w1, $v1, $w2, $v2, $before, $after
