@@ -1,6 +1,6 @@
 {
   "name": "stylus-mixins",
-  "version": "1.0.10",
+  "version": "1.0.11",
   "description": "Stylus mixins for happy development",
   "main": "index.styl",
   "scripts": {
@@ -36,5 +36,5 @@
   "dependencies": {
     "stylus": "0.54.2"
   },
-  "versionify": "1.0.10"
+  "versionify": "1.0.11"
 }
