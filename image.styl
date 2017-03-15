@@ -19,8 +19,8 @@ background-image-retina($image)
   $ext = extname($image)
   $dirname = dirname($image)
   $filename = basename($image, $ext)
-  $image2x = pathjoin($dirname, $filename + '@2x' + $ext)
-  $image3x = pathjoin($dirname, $filename + '@3x' + $ext)
+  $image2x = s('%s', match('^./', $image)) + pathjoin($dirname, $filename + '@2x' + $ext)
+  $image3x = s('%s', match('^./', $image)) + pathjoin($dirname, $filename + '@3x' + $ext)
 
   background-image url($image)
   background-size image-size($image)[0] auto
