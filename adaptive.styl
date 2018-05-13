@@ -81,3 +81,12 @@ width-between-fontsize($w1, $v1, $w2, $v2, $before = false, $after = false)
 
 height-between-fontsize($h1, $v1, $h2, $v2, $before = false, $after = false)
   height-between-property 'font-size', $h1, $v1, $h2, $v2, $before, $after
+
+
+portrait()
+  @media (orientation: portrait)
+    {block}
+
+landscape()
+  @media (orientation: landscape)
+    {block}
